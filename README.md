@@ -17,8 +17,10 @@ Research work/
 │
 ├── app/
 │   └── models/
-│       ├── Image_contour_detection.py   # Модуль для обработки изображений
-│       └── Video_contour_detection.py   # Модуль для обработки видео
+│       ├── My_image_contour_detection.py   # Собственная реализцаи модуля для обработки изображений
+│       └── My_video_contour_detection.py   # Собственная реализцаи модуля для обработки видео
+│       └── Image_contour_detection.py   # Реализация модуля для обработки изображений через OpenCV
+│       └── Video_contour_detection.py   # Реализация модуля для обработки видео через OpenCV
 │
 ├── static/                     
 │   ├── images/                 # Оригинальные изображения для обработки
@@ -40,6 +42,6 @@ Research work/
 │
 ├── image_testing.ipynb         # Тесты для обработки изображений
 ├── video_testing.ipynb         # Тесты для обработки видео
-├── main.py                     # Главный файл для запуска обработки
+├── main.py                     # Пока ничего
 ├── README.md                   # Этот файл
 └── TODO.txt                    # Список задач и планов для проекта

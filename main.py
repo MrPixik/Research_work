@@ -1,4 +1,2 @@
+from app.models.My_image_contour_detection import Image_contour_detection
 
-
-# теСТЫ СРАВНЕНИЯ БЫСТРОДЕЙСТВИЯ СО ВСТРОЕННЫМИ ФУНКЦИЯМИ
-# МЕТОДЫ АВТОМАТИЧЕСКОГО ВЫБОРА ПОРОГА ДЛЯ ПЕРЕХОДА К БИНАРНОМУ ИЗОБРАЖЕНИЮ
