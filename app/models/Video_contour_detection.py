@@ -62,7 +62,8 @@ class Video_contour_detection:
                 if not ret:
                     break
 
-                processed_frame = cd.sobel_edge_detection(frame, kernel_size, threshold)
+
+                processed_frame = cd.sobel_edge_detection(frame, kernel_size, cd.thresholdAdaptive)
 
                 if len(processed_frame.shape) == 2:  # Если изображение имеет два измерения (градации серого)
                     processed_frame = cv2.cvtColor(processed_frame, cv2.COLOR_GRAY2BGR)

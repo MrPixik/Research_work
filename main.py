@@ -1,2 +1,0 @@
-from app.models.My_image_contour_detection import Image_contour_detection
-
