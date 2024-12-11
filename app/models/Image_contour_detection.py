@@ -95,12 +95,6 @@ class Image_contour_detection:
 
         return U, im - U  # denoised image and texture residual
 
-    from skimage.transform import resize
-    import numpy as np
-    import cv2
-    import matplotlib.pyplot as plt
-    from scipy.cluster.vq import kmeans, vq
-
     def classrerizarion(self, image_path):
         image = cv2.imread(image_path)
         steps = 200
@@ -250,8 +244,7 @@ class Image_contour_detection:
         else:
             print("Контуры не найдены.")
 
-    def contour_tracing(self, image
-                        , threshold_method):
+    def contour_tracing(self, image, threshold_method):
 
         # image = cv2.imread(image_path)
 
