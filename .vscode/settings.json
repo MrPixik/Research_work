@@ -1,7 +1,0 @@
-{
-    "python.envFile": "${workspaceFolder}/.env",
-    "files.exclude": {
-        "**/__pycache__": true,
-    },
-    "git.ignoreLimitWarning": true
-}
