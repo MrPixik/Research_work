@@ -85,7 +85,6 @@ def print_all_data_time():
 def preprocess_aud():
     mne.set_log_level('ERROR')
     for i in tqdm(range(1, DATASETS_NUM+1), desc="aud processor"):
-    # for i in range(1, DATASETS_NUM+1):
 
         file_path = get_raw_data_path(AUD_PKGNAME, i, Path(__file__))
 
@@ -98,7 +97,6 @@ def preprocess_aud():
 def preprocess_aud_norm():
     mne.set_log_level('ERROR')
     for i in tqdm(range(1, DATASETS_NUM+1), desc="aud-norm processor"):
-    # for i in range(1, DATASETS_NUM+1):
 
         file_path = get_raw_data_path(AUD_NORM_PKGNAME, i, Path(__file__))
 
