@@ -88,7 +88,7 @@ def get_preprocessed_data_path(experiment_name: str, num: int, current_file_path
     return preprocessed_eeg_data_path
 
 
-def get_topomap_imgs_path(band_name, current_file_path: Path)-> Path:
+def get_topomap_img_path(current_file_path: Path, experiment_type: str,  id: int)-> Path:
     """Возвращает путь до папки с изображениями топографических карт по ключу
 
     :param key: Название канала (ALPHA,BETA,GAMMA... из пакета app.eeg.lib.eeg_channels)
@@ -98,27 +98,29 @@ def get_topomap_imgs_path(band_name, current_file_path: Path)-> Path:
      # Определяем корневую папку проекта
     app_pkg = find_parent_dir(current_file_path.resolve(), APP_PKG_MARKER)
     
-    # Если ключ есть в словаре, возвращаем соответствующее значение
-    if band_name in _TOPOMAP_ORIGIN_PACKAGE_NAME:
-        topomap_imgs_path = app_pkg / 'static' / 'topomap-images' / _TOPOMAP_ORIGIN_PACKAGE_NAME[band_name]
-        return topomap_imgs_path
-    # Если ключа нет, возвращаем значение для CUSTOM
-    else:
-        topomap_imgs_path = app_pkg / 'static' / 'topomap-images' / _TOPOMAP_ORIGIN_PACKAGE_NAME['CUSTOM']
-        return topomap_imgs_path
-
+    file_name = 'experiment_N' + str(id) + '_' + '.png'
+    
+    topomap_img_path = app_pkg / 'static' / 'results' / 'topomaps' / experiment_type  / file_name 
+    return topomap_img_path
+    
 
 def get_solution_data_path_by_band(current_file_path: Path, id: int, experiment_type: str, band: str, component_id: int) -> Path:
-    # Определяем корневую папку проекта
     app_pkg = find_parent_dir(current_file_path.resolve(), APP_PKG_MARKER)
 
     file_name = str(component_id) + '.png'
 
-    # Формируем путь до файла с данными static/reverse_solution/{id}/{experiment_type}/{band}
     solution_data_path = app_pkg / 'static' / 'results' / 'reverse_solution' / str(id) / experiment_type / band / file_name
 
     return solution_data_path
 
+def get_brodmann_data_path(current_file_path: Path, id: int, experiment_type: str, band: str) -> Path:
+    app_pkg = find_parent_dir(current_file_path.resolve(), APP_PKG_MARKER)
+
+    file_name = band + '.xlsx'
+
+    brodmann_data_path = app_pkg / 'static' / 'results' / 'brodmann' / str(id) / experiment_type / file_name
+
+    return brodmann_data_path
 
 # def get_bem_solution_path(current_file_path: Path) -> Path:
 #     # Определяем корневую папку проекта
@@ -163,3 +165,4 @@ def get_inverse_operator_path(current_file_path: Path) -> Path:
     inverse_operator_path = app_pkg / 'static' / 'reverse_problem' / file_name
 
     return inverse_operator_path
+
